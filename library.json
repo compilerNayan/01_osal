@@ -1,10 +1,13 @@
 {
   "name": "01_osal",
   "version": "1.0.0",
-  "description": "Header-only OS Abstraction Layer; no dependencies",
+  "description": "Header-only OS Abstraction Layer",
   "keywords": ["osal", "abstraction", "utility"],
   "authors": [{"name": "Nayan"}],
   "license": "MIT",
   "frameworks": "*",
-  "platforms": "*"
+  "platforms": "*",
+  "dependencies": {
+    "cpp_core": "https://github.com/compilerNayan/cpp_core.git"
+  }
 }

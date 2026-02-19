@@ -1,11 +1,20 @@
 cmake_minimum_required(VERSION 3.14)
 project(01_osal VERSION 1.0.0 LANGUAGES CXX)
 
+include(FetchContent)
+FetchContent_Declare(
+    cpp_core
+    GIT_REPOSITORY https://github.com/compilerNayan/cpp_core.git
+)
+FetchContent_MakeAvailable(cpp_core)
+
 add_library(01_osal INTERFACE)
 
 set_target_properties(01_osal PROPERTIES
     VERSION ${PROJECT_VERSION}
 )
+
+target_link_libraries(01_osal INTERFACE cpp_core)
 
 target_include_directories(01_osal INTERFACE
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
