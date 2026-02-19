@@ -1,0 +1,10 @@
+{
+  "name": "01_osal",
+  "version": "1.0.0",
+  "description": "Header-only OS Abstraction Layer; no dependencies",
+  "keywords": ["osal", "abstraction", "utility"],
+  "authors": [{"name": "Nayan"}],
+  "license": "MIT",
+  "frameworks": "*",
+  "platforms": "*"
+}
