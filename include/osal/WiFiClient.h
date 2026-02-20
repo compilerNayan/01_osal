@@ -1,10 +1,10 @@
 /**
- * @file OSAL_WiFiClient.h
+ * @file WiFiClient.h
  * @brief OSAL WiFiClient: TCP connect/stop (platform abstraction for internet check etc.).
  */
 
-#ifndef OSAL_OSAL_WIFICLIENT_H
-#define OSAL_OSAL_WIFICLIENT_H
+#ifndef OSAL_WIFICLIENT_H
+#define OSAL_WIFICLIENT_H
 
 #include <StandardDefines.h>
 
@@ -36,7 +36,7 @@ private:
 };
 
 #else
-#error "OSAL_WiFiClient.h: only ARDUINO platform is implemented"
+#error "osal/WiFiClient.h: only ARDUINO platform is implemented"
 #endif
 
-#endif /* OSAL_OSAL_WIFICLIENT_H */
+#endif /* OSAL_WIFICLIENT_H */

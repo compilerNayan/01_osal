@@ -1,10 +1,10 @@
 /**
- * @file OSAL_WiFi.h
+ * @file WiFi.h
  * @brief OSAL WiFi: disconnect, mode, begin, status, soft AP, IP strings (platform abstraction).
  */
 
-#ifndef OSAL_OSAL_WIFI_H
-#define OSAL_OSAL_WIFI_H
+#ifndef OSAL_WIFI_H
+#define OSAL_WIFI_H
 
 #include <StandardDefines.h>
 
@@ -60,7 +60,7 @@ inline WifiMode OSAL_GetWifiMode(void) {
 }
 
 #else
-#error "OSAL_WiFi.h: only ARDUINO platform is implemented"
+#error "osal/WiFi.h: only ARDUINO platform is implemented"
 #endif
 
-#endif /* OSAL_OSAL_WIFI_H */
+#endif /* OSAL_WIFI_H */

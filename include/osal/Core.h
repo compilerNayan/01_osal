@@ -1,10 +1,10 @@
 /**
- * @file OSAL_Core.h
+ * @file Core.h
  * @brief OSAL core: delay/sleep, random, Serial/print (platform abstraction).
  */
 
-#ifndef OSAL_OSAL_CORE_H
-#define OSAL_OSAL_CORE_H
+#ifndef OSAL_CORE_H
+#define OSAL_CORE_H
 
 #include <StandardDefines.h>
 
@@ -31,7 +31,7 @@ inline Void OSAL_Println(const StdString& s) {
 }
 
 #else
-#error "OSAL_Core.h: only ARDUINO platform is implemented"
+#error "osal/Core.h: only ARDUINO platform is implemented"
 #endif
 
-#endif /* OSAL_OSAL_CORE_H */
+#endif /* OSAL_CORE_H */
