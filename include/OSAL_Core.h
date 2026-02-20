@@ -16,6 +16,11 @@ inline Void OSAL_DelayMs(ULong ms) {
     Thread::Sleep(static_cast<unsigned long>(ms));
 }
 
+/** Elapsed milliseconds since boot (e.g. Arduino millis()). */
+inline ULong OSAL_GetMillis(void) {
+    return static_cast<ULong>(millis());
+}
+
 inline ULong OSAL_GenerateConnectionId(void) {
     return static_cast<ULong>(random(1, 2147483647));
 }
