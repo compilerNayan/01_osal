@@ -9,54 +9,54 @@
 #include <StandardDefines.h>
 
 /** Platform-agnostic WiFi mode (maps from native WiFiMode_t on Arduino). */
-enum class WifiMode { None, Sta, Ap, ApSta };
+enum class WiFiMode { None, Sta, Ap, ApSta };
 
 #ifdef ARDUINO
 #include <WiFi.h>
 #include <Arduino.h>
 
-inline Void OSAL_WifiDisconnect(void) {
+inline Void OSAL_WiFiDisconnect(void) {
     WiFi.disconnect();
 }
 
-inline Void OSAL_WifiSetModeSta(void) {
+inline Void OSAL_WiFiSetModeSta(void) {
     WiFi.mode(WIFI_STA);
 }
 
-inline Void OSAL_WifiSetModeAp(void) {
+inline Void OSAL_WiFiSetModeAp(void) {
     WiFi.mode(WIFI_AP);
 }
 
-inline Void OSAL_WifiBegin(const StdString& ssid, const StdString& password) {
+inline Void OSAL_WiFiBegin(const StdString& ssid, const StdString& password) {
     WiFi.begin(ssid.c_str(), password.empty() ? nullptr : password.c_str());
 }
 
-inline Bool OSAL_WifiIsConnected(void) {
+inline Bool OSAL_WiFiIsConnected(void) {
     return (WiFi.status() == WL_CONNECTED);
 }
 
-inline StdString OSAL_WifiGetLocalIpString(void) {
+inline StdString OSAL_WiFiGetLocalIpString(void) {
     return StdString(WiFi.localIP().toString().c_str());
 }
 
-inline Bool OSAL_WifiStartSoftAp(const StdString& ssid, const char* password) {
+inline Bool OSAL_WiFiStartSoftAp(const StdString& ssid, const char* password) {
     return WiFi.softAP(ssid.c_str(), password);
 }
 
-inline StdString OSAL_WifiGetSoftApIpString(void) {
+inline StdString OSAL_WiFiGetSoftApIpString(void) {
     return StdString(WiFi.softAPIP().toString().c_str());
 }
 
-inline Void OSAL_WifiSoftApDisconnect(void) {
+inline Void OSAL_WiFiSoftApDisconnect(void) {
     WiFi.softAPdisconnect(true);
 }
 
-inline WifiMode OSAL_GetWifiMode(void) {
+inline WiFiMode OSAL_GetWiFiMode(void) {
     WiFiMode_t m = WiFi.getMode();
-    if (m == WIFI_AP) return WifiMode::Ap;
-    if (m == WIFI_AP_STA) return WifiMode::ApSta;
-    if (m == WIFI_STA) return WifiMode::Sta;
-    return WifiMode::None;
+    if (m == WIFI_AP) return WiFiMode::Ap;
+    if (m == WIFI_AP_STA) return WiFiMode::ApSta;
+    if (m == WIFI_STA) return WiFiMode::Sta;
+    return WiFiMode::None;
 }
 
 #else
